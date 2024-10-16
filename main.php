@@ -13,7 +13,7 @@ echo "\nYour order is: $very_bad_unclear_name.";
 
 /* task 2 */
 $ll = 42;
-echo "$\n$ll\n";
+echo "$\n\n$ll\n";
 $ld = 4.20;
 echo "$ld\n";
 
@@ -21,6 +21,12 @@ echo $ll-30 . "\n";
 
 $last_month = 1187.23;
 $this_month = 1089.98;
-echo $last_month - $this_month . "\n";
+echo $last_month - $this_month . "\n\n";
 
+/* task 11 */
+$num_languages = 4;
+$months = 11;
+$days = $months * 16;
+$days_per_language = $days / $num_languages;
+echo $num_languages . "\n";
 ?>
