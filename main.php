@@ -191,4 +191,53 @@ function reducetodigsum($x) {
 }
 echo reducetodigsum(998) . "\n\n"; // 998 -> 26 -> 8
 
+/* task 17 */
+$a = [];
+$a[] = 'x';
+for ($i =  1; $i < 4; $i++) {
+    $a[] = $a[$i-1] . 'x';
+}
+print_r($a);
+
+function arrayFill($val, $n) {
+    $a = [];
+    for ($i = 0; $i < $n; $i++) {
+        $a[] = $val;
+    }
+    return $a;
+}
+print_r(arrayFill('x', 5));
+
+$mat = [[1,2,3],[4,5],[6]];
+function sumarr2d($mat) {
+    $sum = 0;
+    foreach ($mat as $a) {
+        foreach ($a as $e) {
+            $sum += $e;
+        }
+    }
+    return $sum;
+}
+echo sumarr2d($mat) . "\n";
+
+$a = [2, 5, 3, 9];
+$result = $a[0] * $a[2] + $a[1] * $a[3];
+echo $result . "\n";
+
+$user = ['name' => "Sheshtanov", 'surname' => "Gennady", 'patronymic' => "Alexandrovich"];
+foreach ($user as $token) echo $token . " ";
+echo "\n";
+
+$date = ['year' => 2024, 'month' => 10, 'day' => 16];
+echo $date['year'] . "-" . $date['month'] . "-" . $date['day'] . "\n";
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+echo "arr.size() == " . count($arr) . "\n";
+
+// print last and second-to-last element
+echo $arr[count($arr)-1] . " " . $arr[count($arr)-2] . "\n";
+
+
+
+
 ?>
