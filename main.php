@@ -268,7 +268,15 @@ $arr = [1, 2, 3];
 if (count($arr) == 3) {
     $tmp = 0;
     foreach ($a as $e) $tmp+=$e;
-    echo "elem sum is " . $tmp . "\n";
+    echo "elem sum is " . $tmp . "\n\n";
 }
 
+/* task 19 */
+for ($i = 0; $i < 20; $i++) {
+    for ($j = 0; $j <= $i; ++$j) {
+        echo 'x';
+    }
+    echo "\n";
+}
+echo "\n";
 ?>
