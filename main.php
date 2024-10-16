@@ -33,5 +33,15 @@ echo $num_languages . "\n\n";
 /* task 12 */
 echo 8 ** 2 . "\n\n";
 
+/* task 13 */
+$my_num = 42;
+$answer = $my_num;
+$answer += 2;
+$answer *= 2;
+$answer -=2;
+$answer /=2;
+$answer -= $my_num;
+echo "$answer\n\n";
+
 
 ?>
