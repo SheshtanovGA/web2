@@ -279,4 +279,27 @@ for ($i = 0; $i < 20; $i++) {
     echo "\n";
 }
 echo "\n";
+
+/* task 20 */
+// mean average
+$arr = [1, 2, 3, 4];
+echo array_sum($arr) / count($arr) . "\n";
+
+
+// sum 1..100
+echo (1+100)/2 * 100 . "\n";
+
+// array of sqrt
+$arr = [1, 2, 3, 4, 5];
+$sqrts = array_map('sqrt', $arr);
+print_r($sqrts);
+
+$ABC = range('a', 'z');
+$ord = range(1, 26);
+print_r(array_combine($ABC, $ord));
+
+/* Дана строка с числами '1234567890'. Найдите сумму пар чисел: 12+34+56+78+90 */
+$s = "1234567890";
+echo array_sum(array_map('intval', str_split($s, 2))) . "\n";
+
 ?>
