@@ -152,9 +152,43 @@ function printStringReturnNumber($s) {
 $my_num = printStringReturnNumber($s);
 echo $my_num . "\n\n";
 
-
-
-
-
+/* task 16 */
+function increaseEnthusiasm($s) {
+    return $s . "!";
+}
+echo increaseEnthusiasm("hello world") . "\n";
+function repeatThreeTimes($s) {
+    $tempstr = "";
+    for ($i = 0; $i < 3; $i++) {
+        $tempstr .= $s;
+    }
+    return $tempstr;
+}
+echo repeatThreeTimes("6e") . "\n";
+echo increaseEnthusiasm(repeatThreeTimes("6e")) . "\n";
+function cut($str, $n = 10) {
+    return substr($str, 0, $n);
+}
+echo "substrings: " .  cut("12345678900") . " " . cut("12345678900", 4) . "\n";
+// iterate over array recursively
+$a = array(1, 2, 3, 4, 5, 6, 7, 8);
+function printarr($a, $i = 0) {
+    if ($i == count($a)) { echo "\n";return;}
+    echo $a[$i] . " ";
+    printarr($a, $i+1);
+}
+printarr($a);
+// assign sum of the digits while n > 9;
+function reducetodigsum($x) {
+    if ($x <= 9) return $x;
+    $t = $x;
+    $sum = 0;
+    while ($t > 0) {
+        $sum += $t % 10;
+        $t /= 10;
+    }
+    return reducetodigsum($sum);
+}
+echo reducetodigsum(998) . "\n\n"; // 998 -> 26 -> 8
 
 ?>
