@@ -138,6 +138,22 @@ function binsearch($arr, $val) {
 }
 echo "sum >= 10 at index " . binsearch($prefixsum, 10) . "\n\n";
 
+/* task 15 */ 
+$s = "hello world";
+function printStringReturnNumber($s) {
+    echo $s . "\n";
+    // return number wasn't specifyed, so i return primitive hash
+    $n = 0;
+    for ($i = 0; $i < strlen($s); ++$i) {
+        $n += ord($s[$i]); // character ASCII value
+    }
+    return $n;
+}
+$my_num = printStringReturnNumber($s);
+echo $my_num . "\n\n";
+
+
+
 
 
 
