@@ -237,7 +237,38 @@ echo "arr.size() == " . count($arr) . "\n";
 // print last and second-to-last element
 echo $arr[count($arr)-1] . " " . $arr[count($arr)-2] . "\n";
 
+/* task 18 */
+function sumover10($a, $b) {
+    return $a+$b > 10;
+}
+function equals($a,$b) {
+    return $a == $b;
+}
+/*
+Перепишите следующий код в сокращенной форме:
+	if ($test == 0) {
+		echo 'верно';
+	}
+*/
+$test = 0;
+echo (!$test) ? ('верно') : ("");
+echo "\n";
 
+$age = rand(1, 100);
+if ($age < 10 || 99 < $age) {
+    echo "age not allowed\n";
+} else {
+    if ($age / 10 + $age % 10 <= 9) 
+        echo "sum is single-digit\n";
+    else 
+        echo "sum is double-digit\n";
+}
 
+$arr = [1, 2, 3];
+if (count($arr) == 3) {
+    $tmp = 0;
+    foreach ($a as $e) $tmp+=$e;
+    echo "elem sum is " . $tmp . "\n";
+}
 
 ?>
