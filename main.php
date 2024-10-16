@@ -43,5 +43,102 @@ $answer /=2;
 $answer -= $my_num;
 echo "$answer\n\n";
 
+/* task 14 */
+// a mod b
+$a = 10;
+$b = 3;
+echo $a % $b . "\n";
+// divisible -> result, divisible with remaider -> remainder
+$a = 1001;
+$b = 77;
+echo ($a % $b == 0) ? ("Делится " . $a / $b . "\n") : ("Делится с остатком " . $a % $b . "\n");
+// assign st 2^10
+$st = 2**10;
+// self explanotary
+echo "sqrt(245) = " . sqrt(245) . "\n";
+// euclidian distance
+$a = array(4, 2, 5, 19, 13, 0, 10);
+$t = 0;
+foreach ($a as $e) {
+    $t += $e*$e;
+}
+echo sqrt($t) . "\n";
+// rounding to 0th, 1st, 2nd digits
+echo round(sqrt(379)) . " " . round(10*sqrt(379))/10 . " " . round(100*sqrt(379))/100 . "\n";
+// assotiative array
+$t = sqrt(587);
+$ans = [ 'floor' => floor($t), 'ceil' => ceil($t)];
+// array min, max
+$a = array(4, -2, 5, 19, -120, 0, 10);
+echo min($a) . " " . max($a) . "\n";
+// random int
+echo rand(1, 100) . "\n";
+// array of random int
+$a = [];
+for ($i = 0; $i < 10; $i++) {
+    $a[] = rand(1, 100);
+}
+for ($i = 0; $i < 10; $i++) {
+    echo $a[$i] . " ";
+}
+// abs difference
+$a = 7;
+$b = 9;
+echo "\n" . abs($a - $b) . "\n";
+$a = 10;
+$b = 1;
+echo abs($a - $b) . "\n";
+// abs array
+$a = array(1, 2, -1, -2, 3, -3);
+for ($i = 0; $i < count($a); $i++) {
+    $a[$i] = abs($a[$i]);
+    echo $a[$i] . " ";
+}
+echo "\n";
+// divisors array by given number
+$x = 30;
+function divisors($n) {
+    $divisors = [];
+    for ($i = 1; $i * $i <= $n; $i++) {
+        if ($n % $i == 0) {
+            $divisors[] = $i;
+            if ($i * $i != $n) {
+                $divisors[] = $n / $i;
+            }
+        }
+    }
+    sort($divisors);
+    return $divisors;
+}
+$divisors = divisors($x);
+foreach ($divisors as $e) {
+    echo $e . " ";
+}
+echo "\n";
+// find when sum exceeds 10
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+$prefixsum = []; // im deliborately overcomplicating this (same O(n))
+$prefixsum[] = 0;
+for ($i = 0; $i < count($a); $i++) {
+    $prefixsum[] = $prefixsum[$i] + $a[$i];
+} 
+function binsearch($arr, $val) { 
+    // smth like std::upper_bound
+    $low = 0;
+    $high = count($arr);
+    while ($low < $high) {
+        $mid = (int)(($low + $high) / 2);
+        if ($arr[$mid] <= $val) {
+            $low = $mid + 1;
+        } else {
+            $high = $mid;
+        }
+    }
+    return $low-1;
+}
+echo "sum >= 10 at index " . binsearch($prefixsum, 10) . "\n\n";
+
+
+
 
 ?>
